@@ -4,14 +4,19 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
+  background-color: antiquewhite;
+}
+
+h1 {
+  margin-bottom: 60px;
+  color: #04aa6d;
+  font-family: sans-serif;
 }
 
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 100px);
-  grid-gap: 10px;
+  grid-gap: 15px;
 }
 
 .card {
@@ -31,20 +36,45 @@ body {
   backface-visibility: hidden;
 }
 
-.card.flipped {
-  transform: rotateY(180deg);
+.card.flipped img.front {
+  transform: rotateY(0deg);
 }
 
-.card img.back {
-  transform: rotateY(180deg);
+.card.flipped img.back {
+  transform: rotateY(-180deg);
 }
 
 #rst-btn {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #message {
   margin-top: 20px;
   font-size: 20px;
   color: red;
+}
+
+.button {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #04aa6d;
+}
+
+.button1:hover {
+  background-color: #04aa6d;
+  color: white;
 }

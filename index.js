@@ -44,15 +44,16 @@ function initializeGame() {
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
+    // swaping algorithm called Fisher-Yates to random elements in an array
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
 
 function flipCard(card) {
   if (
-    lockBoard ||
     card.classList.contains("flipped") ||
-    flippedCards.length === 2
+    flippedCards.length === 2 ||
+    lockBoard
   )
     return;
 
@@ -101,5 +102,5 @@ function resetGame() {
 
 resetBtn.addEventListener("click", resetGame);
 
-// Initialize the game
+// Starting the game by invoking the intializeGame function
 initializeGame();
